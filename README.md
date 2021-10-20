@@ -30,7 +30,7 @@ npm install
 
 ## Usage
 
-This project starter provides facilities for customizing Phaser namespace build and load functionality. This is structured around Webpack `v4` as that is what the Phaser 3 project uses (other useful packages may still be dependent on `v4` as well - for example [cordova-webpack-plugin](https://github.com/kotarella1110/cordova-plugin-webpack)). See [phaser.js](./src/phaser/phaser.js) for customizing a Phaser build based on the currently installed Phaser NPM package.
+This project starter provides facilities for customizing Phaser namespace build and load functionality. This is structured around Webpack `v4` as that is what the Phaser 3 project uses (other useful packages may still be dependent on `v4` as well - for example [cordova-plugin-webpack](https://github.com/kotarella1110/cordova-plugin-webpack)). See [phaser.js](./src/phaser/phaser.js) for customizing a Phaser build based on the currently installed Phaser NPM package.
 
 ### File Structure
 

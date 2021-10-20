@@ -1,60 +1,109 @@
 {
-  "name": "@agogpixel/phaser3-project-starter",
-  "version": "0.4.0",
-  "description": "Phaser 3 project starter.",
+  "name": "@agogpixel/phaser3-cordova-project-starter",
+  "version": "0.1.0",
+  "description": "Phaser 3 project starter with Cordova.",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --color",
-    "start": "webpack-dev-server --progress --color",
+    "build": "cordova:build:browser:prod",
+    "cordova:build:android:dev": "cross-env NODE_ENV=development PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova build android --debug --device",
+    "cordova:build:android:prod": "cross-env NODE_ENV=production PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova build android --device",
+    "cordova:build:browser:dev": "cross-env NODE_ENV=development PLATFORM=browser TS_NODE_PROJECT=tsconfig.webpack.json cordova build browser --debug",
+    "cordova:build:browser:prod": "cross-env NODE_ENV=production PLATFORM=browser TS_NODE_PROJECT=tsconfig.webpack.json cordova build browser",
+    "cordova:build:electron:dev": "cross-env NODE_ENV=development PLATFORM=electron TS_NODE_PROJECT=tsconfig.webpack.json cordova build electron --debug",
+    "cordova:build:electron:prod": "cross-env NODE_ENV=production PLATFORM=electron TS_NODE_PROJECT=tsconfig.webpack.json cordova build electron",
+    "cordova:build:ios:dev": "cross-env NODE_ENV=development PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova build ios --debug --device",
+    "cordova:build:ios:prod": "cross-env NODE_ENV=production PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova build ios --device",
+    "cordova:build:osx:dev": "cross-env NODE_ENV=development PLATFORM=osx TS_NODE_PROJECT=tsconfig.webpack.json cordova build osx --debug",
+    "cordova:build:osx:prod": "cross-env NODE_ENV=production PLATFORM=osx TS_NODE_PROJECT=tsconfig.webpack.json cordova build osx",
+    "cordova:build:windows:dev": "cross-env NODE_ENV=development PLATFORM=windows TS_NODE_PROJECT=tsconfig.webpack.json cordova build windows --debug",
+    "cordova:build:windows:prod": "cross-env NODE_ENV=production PLATFORM=windows TS_NODE_PROJECT=tsconfig.webpack.json cordova build windows",
+    "cordova:prepare": "cordova prepare",
+    "cordova:run:android": "cross-env NODE_ENV=development PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova run android -- --livereload",
+    "cordova:run:browser": "cross-env NODE_ENV=development PLATFORM=browser TS_NODE_PROJECT=tsconfig.webpack.json cordova run browser -- --livereload",
+    "cordova:run:electron": "cross-env NODE_ENV=development PLATFORM=electron TS_NODE_PROJECT=tsconfig.webpack.json cordova run electron -- --livereload",
+    "cordova:run:ios": "cross-env NODE_ENV=development PLATFORM=ios TS_NODE_PROJECT=tsconfig.webpack.json cordova run ios -- --livereload",
+    "cordova:run:osx": "cross-env NODE_ENV=development PLATFORM=osx TS_NODE_PROJECT=tsconfig.webpack.json cordova run osx -- --livereload",
+    "cordova:run:windows": "cross-env NODE_ENV=development PLATFORM=windows TS_NODE_PROJECT=tsconfig.webpack.json cordova run windows -- --livereload",
+    "cordova:clean": "cordova clean",
+    "start": "npm run cordova:run:browser",
     "test": "jest",
     "lint": "eslint jest.config.js webpack.config.js src && prettier --check .",
     "lint:fix": "eslint --fix jest.config.js webpack.config.js src && prettier --write .",
-    "prepare": "husky install"
+    "prepare": "shx mkdir www && npm run cordova:prepare && husky install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agogpixel/phaser3-project-starter.git"
+    "url": "git+https://github.com/agogpixel/phaser3-cordova-project-starter.git"
   },
   "author": "kidthales <kidthales@agogpixel.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/agogpixel/phaser3-project-starter/issues"
+    "url": "https://github.com/agogpixel/phaser3-cordova-project-starter/issues"
   },
-  "homepage": "https://github.com/agogpixel/phaser3-project-starter#readme",
+  "homepage": "https://github.com/agogpixel/phaser3-cordova-project-starter#readme",
   "dependencies": {
     "phaser": "^3.55.2"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^14.17.27",
+    "@types/webpack": "^4.41.31",
+    "@types/webpack-dev-server": "^3.11.6",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
-    "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^6.4.1",
+    "cordova-android": "^10.1.1",
+    "cordova-browser": "^6.0.0",
+    "cordova-electron": "^3.0.0",
+    "cordova-ios": "^6.2.0",
+    "cordova-osx": "^6.0.0",
+    "cordova-plugin-webpack": "^1.0.5",
+    "cordova-windows": "^7.0.1",
     "cross-env": "^7.0.3",
+    "css-loader": "^5.2.7",
+    "css-minimizer-webpack-plugin": "^1.3.0",
     "ejs-loader": "^0.5.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^1.3.2",
     "html-webpack-plugin": "^4.5.2",
     "husky": "^7.0.2",
     "jest": "^27.3.1",
     "jest-canvas-mock": "^2.3.1",
     "lint-staged": "^11.2.3",
+    "mini-css-extract-plugin": "^1.6.2",
     "prettier": "^2.4.1",
+    "sass": "^1.41.1",
+    "sass-loader": "^10.2.0",
     "shx": "^0.3.3",
     "source-map-loader": "^1.1.3",
+    "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^4.2.3",
     "ts-jest": "^27.0.7",
-    "ts-loader": "^8.2.0",
+    "ts-loader": "^8.3.0",
     "tslib": "^2.3.1",
     "typescript": "^4.4.4",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
   },
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-webpack": {}
+    },
+    "platforms": [
+      "android",
+      "electron",
+      "ios",
+      "osx",
+      "windows",
+      "browser"
+    ]
   },
   "lint-staged": {
     "*.(html|js|ts)": "eslint --cache --fix",

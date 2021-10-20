@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-webpack": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-webpack@^1.0.5"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
