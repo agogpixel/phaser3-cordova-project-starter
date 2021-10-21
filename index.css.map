@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/styles/styles.scss"],"names":[],"mappings":"AAEA,OACE","file":"index.css","sourcesContent":["/* Global syles. */\n\ncanvas {\n  border: 5px solid #ddd;\n}\n"],"sourceRoot":""}
