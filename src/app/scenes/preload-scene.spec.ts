@@ -47,8 +47,8 @@ describe('Preload Scene', () => {
   it('starts & follows its lifecycle', () => {
     const spyInit = jest.spyOn(scene, 'init');
     const spyPreload = jest.spyOn(scene, 'preload');
-    // Spy on file pack load.
-    const spyLoadPack = jest.spyOn(scene.load, 'pack');
+    // Spy image load.
+    const spyLoadImage = jest.spyOn(scene.load, 'image');
     // Spy on transition to next scene.
     const spySceneTransition = jest.spyOn(scene.scene, 'transition');
 
@@ -56,7 +56,7 @@ describe('Preload Scene', () => {
 
     expect(spyInit).toHaveBeenCalled();
     expect(spyPreload).toHaveBeenCalled();
-    expect(spyLoadPack).toHaveBeenCalled();
+    expect(spyLoadImage).toHaveBeenCalled();
 
     scene.create();
 

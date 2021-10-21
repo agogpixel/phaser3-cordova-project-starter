@@ -12,7 +12,9 @@ jobs:
         with:
           node-version: '14'
       - name: Dependencies
-        run: npm install
+        run: |
+          npm install -g cordova
+          npm install
       - name: Lint
         run: npm run lint
       - name: Unit Test

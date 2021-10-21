@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Phaser 3 project starter with Cordova.",
   "scripts": {
-    "build": "cordova:build:browser:prod",
+    "build": "npm run cordova:build:browser:prod",
     "cordova:build:android:dev": "cross-env NODE_ENV=development PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova build android --debug --device",
     "cordova:build:android:prod": "cross-env NODE_ENV=production PLATFORM=android TS_NODE_PROJECT=tsconfig.webpack.json cordova build android --device",
     "cordova:build:browser:dev": "cross-env NODE_ENV=development PLATFORM=browser TS_NODE_PROJECT=tsconfig.webpack.json cordova build browser --debug",
@@ -26,9 +26,9 @@
     "cordova:clean": "cordova clean",
     "start": "npm run cordova:run:browser",
     "test": "jest",
-    "lint": "eslint jest.config.js webpack.config.js src && prettier --check .",
-    "lint:fix": "eslint --fix jest.config.js webpack.config.js src && prettier --write .",
-    "prepare": "shx mkdir www && npm run cordova:prepare && husky install"
+    "lint": "eslint jest.config.js webpack.config.ts src webpack && prettier --check .",
+    "lint:fix": "eslint --fix jest.config.js webpack.config.ts src webpack && prettier --write .",
+    "prepare": "shx mkdir -p www && npm run cordova:prepare && husky install"
   },
   "repository": {
     "type": "git",
@@ -81,6 +81,8 @@
     "terser-webpack-plugin": "^4.2.3",
     "ts-jest": "^27.0.7",
     "ts-loader": "^8.3.0",
+    "ts-node": "^10.3.0",
+    "tsconfig-paths": "^3.11.0",
     "tslib": "^2.3.1",
     "typescript": "^4.4.4",
     "webpack": "^4.46.0",

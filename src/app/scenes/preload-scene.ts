@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 /**
  * Preload scene.
  *
@@ -24,7 +26,7 @@ export class PreloadScene extends Phaser.Scene {
    * before create is invoked.
    */
   public preload(): void {
-    this.load.pack('assets', 'assets/manifest.json');
+    this.load.image('phaser3', require('../../assets/textures/phaser3.png'));
   }
 
   /**

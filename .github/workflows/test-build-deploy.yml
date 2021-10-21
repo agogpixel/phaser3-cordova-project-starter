@@ -11,7 +11,9 @@ jobs:
         with:
           node-version: '14'
       - name: Dependencies
-        run: npm install
+        run: |
+          npm install -g cordova
+          npm install
       - name: Lint
         run: npm run lint
       - name: Unit Test
@@ -26,10 +28,10 @@ jobs:
       - name: Archive Build
         uses: actions/upload-artifact@v2
         with:
-          name: dist
-          path: dist
+          name: www
+          path: www
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: dist
+          folder: www

@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="Content-Security-Policy" content="<%= contentSecurityPolicy %>" />
+
 		<title><%= htmlWebpackPlugin.options.title %></title>
+
 		<style media="screen" type="text/css">
 			html,
 			body {
