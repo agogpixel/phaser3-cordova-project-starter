@@ -8,6 +8,8 @@ declare const PLATFORM_IOS: boolean;
 declare const PLATFORM_OSX: boolean;
 declare const PLATFORM_WINDOWS: boolean;
 
+import './styles/styles.scss';
+
 (async function bootstrap() {
   const { phaserFactory } = await import(/* webpackChunkName: "phaser" */ './phaser');
   await phaserFactory();
