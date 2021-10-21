@@ -1,4 +1,5 @@
 .git/*
+.husky/*
 .vscode/*
 coverage/*
 node_modules/*
@@ -6,3 +7,4 @@ platforms/*
 plugins/*
 www/*
 package-lock.json
+package.json

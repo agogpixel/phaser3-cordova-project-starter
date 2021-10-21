@@ -97,6 +97,12 @@ phaser3-cordova-project-starter/
  |   ├──index.html                     * HTML template.
  |   └──index.ts                       * Bootstrap & run the application.
  |
+ ├──test/                              * Testing resources.
+ |   |
+ |   └──mocks/                         * Testing mock files.
+ |       ├──file-mock.js               * Mock module import of most binary resources.
+ |       └──style-mock.js              * Mock module import of styles.
+ |
  ├──webpack/                           * Webpack configurations.
  |   ├──common-config.ts               * Common configuration.
  |   ├──development-config.ts          * Development configuration.
