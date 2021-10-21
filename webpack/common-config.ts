@@ -105,6 +105,7 @@ const config: Config = (options) => {
       ].filter(Boolean)
     },
     plugins: [
+      extractCss ? new MiniCssExtractPlugin() : undefined,
       new DefinePlugin({
         TITLE: JSON.stringify(meta.title),
         VERSION: JSON.stringify(meta.version),
@@ -148,7 +149,7 @@ const config: Config = (options) => {
         },
         meta
       })
-    ]
+    ].filter(Boolean)
   });
 };
 
