@@ -5,7 +5,7 @@ import commonConfig from './common-config';
 import { Config, ConfigOptions, Environment } from './models';
 
 const defaultOptions: Partial<ConfigOptions> = {
-  contentSecurityPolicy: "default-src 'self' data: blob:; style-src 'self'",
+  contentSecurityPolicy: "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:",
   extractCss: true,
   minimizeCss: true,
   minimizeHtml: true,

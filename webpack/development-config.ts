@@ -6,7 +6,8 @@ import commonConfig from './common-config';
 import { Config, ConfigOptions, Environment } from './models';
 
 const defaultOptions: Partial<ConfigOptions> = {
-  contentSecurityPolicy: "default-src 'self' blob: data: gap: 'unsafe-eval'; style-src 'self' 'unsafe-inline'",
+  contentSecurityPolicy:
+    "default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: blob: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;",
   extractCss: false,
   minimizeCss: false,
   minimizeHtml: false,
