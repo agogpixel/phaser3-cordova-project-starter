@@ -26,8 +26,8 @@
     "cordova:clean": "cordova clean",
     "start": "npm run cordova:run:browser",
     "test": "jest",
-    "lint": "eslint jest.config.js webpack.config.ts src webpack && prettier --check .",
-    "lint:fix": "eslint --fix jest.config.js webpack.config.ts src webpack && prettier --write .",
+    "lint": "eslint jest.config.js webpack.config.ts src test webpack && prettier --check .",
+    "lint:fix": "eslint --fix jest.config.js webpack.config.ts src test webpack && prettier --write .",
     "prepare": "shx mkdir -p www && npm run cordova:prepare && husky install"
   },
   "repository": {
