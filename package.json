@@ -1,6 +1,6 @@
 {
   "name": "@agogpixel/phaser3-cordova-project-starter",
-  "version": "0.3.0",
+  "version": "0.0.0",
   "description": "Phaser 3 project starter with Cordova.",
   "scripts": {
     "build": "npm run cordova:build:browser:prod",
